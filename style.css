@@ -179,10 +179,6 @@ body main .redirect-button:active {
     row-gap: 0;
   }
   body .info-card {
-    margin-top: 10vh;
-    margin: 0 5vw;
-  }
-  body #copyright {
-    margin-bottom: 10vh;
+    margin: 10vh 5vw;
   }
 }/*# sourceMappingURL=style.css.map */
