@@ -10,7 +10,7 @@ body
     row-gap: 15vw
     justify-content: space-evenly
     margin: 0
-    overflow: auto
+    overflow: hidden
     //styling
     background: colors.$background
 
@@ -22,8 +22,9 @@ body
         margin-top: 30vh
         // styling
         background-color: colors.$background-secondary
-        border: 5px solid black
+        border: 5px solid colors.$primary-text
         border-radius: 5vh
+        box-shadow: .2vh .2vw 0 0 colors.$primary-text
         overflow: hidden
 
         h3
@@ -34,7 +35,8 @@ body
             top: none
             // styling
             background-color: colors.$secondary
-            border-bottom: 3px solid black
+            border-bottom: 3px solid colors.$primary-text
+            color: colors.$primary-text
             font-family: 'JetBrains Mono'
             font-size: 1.75rem
             font-weight: 800
@@ -79,32 +81,63 @@ body
             &:hover
                 border: 1px solid transparentize(colors.$secondary, 0.875)
         
-        .redirect-button
-            // scaling
-            padding: 1vh calc(5vw + 6vh)
-            width: 100%
+        #button-container
+            // sizing
+            height: fit-content
+            max-height: 50vh
+            margin-left: 1vw
+            padding-right: 1vw
+            // layouting
+            display: flex
+            flex-direction: column
+            gap: 5vh
+            overflow-y: scroll
             // styling
-            background-color: colors.$primary
-            border: 1px colors.$secondary solid
-            border-radius: 3vh
-            box-shadow: 0 0.5vh 0 0 colors.$secondary, 0 -0.25vh 1vh -0.5vh #000
-            font-family: 'JetBrains Mono', sans-serif
-            font-size: 1.5rem
-            font-weight: 600
-            transition: all 100ms ease
-            user-select: none
 
-            &:active
-                // transforming
-                transform: translateY(0.5vh)
+            &::-webkit-scrollbar
+                width: 1vw
+
+            &::-webkit-scrollbar-track
+                background-color: colors.$background-secondary
+                border-radius: 5vw
+                box-shadow: 0.15vw 0.175vh 0 0 #000
+
+            &::-webkit-scrollbar-thumb
+                border: 1px solid colors.$secondary
+                border-radius: 5vw
+                background-color: colors.$primary
+
+
+            .redirect-button
+                // scaling
+                padding: 1vh 6vw
                 // styling
-                box-shadow: 0 0vh 0 0 colors.$secondary, 0 -0.25vh 1vh -0.5vh #000
+                background-color: colors.$primary
+                border: 1px colors.$secondary solid
+                border-radius: 3vh
+                box-shadow: 0 0.5vh 0 0 colors.$secondary, 0 -0.25vh 1vh -0.5vh #000
+                color: colors.$primary-text
+                font-family: 'JetBrains Mono', sans-serif
+                font-size: 1.5rem
+                font-weight: 600
+                transition: all 100ms ease
+                user-select: none
+
+                &:active
+                    // transforming
+                    transform: translateY(0.5vh)
+                    // styling
+                    box-shadow: 0 0vh 0 0 colors.$secondary, 0 -0.25vh 1vh -0.5vh #000
+
+            :last-child
+                margin-bottom: 2vh
 
 @media screen and (max-width: 1350px)
     body
         align-items: center
         flex-direction: column
         justify-content: space-evenly
+        overflow: auto
         row-gap: 0
 
         .info-card

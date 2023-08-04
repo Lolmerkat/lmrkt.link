@@ -41,7 +41,7 @@ function setBoxShadow(offsetX, offsetY, blurAmount, padding, color, withAnimatio
         profilePicture.style.transition = "all 0ms";
     }
 
-    profilePicture.style.boxShadow = `${offsetX / 10}vw ${offsetY / 10}vw 0 0 #2caa6f,
+    profilePicture.style.boxShadow = `${offsetX / 10}vw ${offsetY / 10}vw 0 0 #2caa58,
         ${offsetX}vw ${offsetY}vw ${blurAmount} ${padding} ${color}`;
 }
 
