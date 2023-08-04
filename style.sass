@@ -1,0 +1,146 @@
+@use "sass/colors"
+@use "sass/fonts"
+@use "sass:math"
+
+body
+    // layouting
+    display: flex
+    flex-direction: row
+    flex-wrap: now
+    row-gap: 15vw
+    justify-content: space-evenly
+    margin: 0
+    overflow: hidden
+    //styling
+    background: colors.$background
+
+    .info-card
+        // scaling
+        height: fit-content
+        width: fit-content
+        // layouting   
+        margin-top: 30vh
+        // styling
+        background-color: colors.$background-secondary
+        border: 5px solid colors.$primary-text
+        border-radius: 5vh
+        box-shadow: .2vh .2vw 0 0 colors.$primary-text
+        overflow: hidden
+
+        h3
+            // sizing
+            padding: 3vh 0 1vh 0
+            // layouting
+            margin-top: 0
+            top: none
+            // styling
+            background-color: colors.$secondary
+            border-bottom: 3px solid colors.$primary-text
+            color: colors.$primary-text
+            font-family: 'JetBrains Mono'
+            font-size: 1.75rem
+            font-weight: 800
+            text-align: center
+
+        p
+            // sizing
+            // layouting
+            padding: 0 2.5vw
+            // styling
+            color: colors.$background-text
+            font-family: 'JetBrains Mono'
+            font-size: 1rem
+            text-align: center
+
+    main
+        // scaling
+        height: fit-content
+        width: fit-content
+        // layouting
+        align-items: center
+        display: flex
+        flex-direction: column   
+        gap: 5vh
+        justify-content: space-between
+        margin: 10vh 0
+        
+
+        $profileImageSideLength: 23vh
+        img
+            // scaling
+            height: $profileImageSideLength
+            width: $profileImageSideLength
+            // layouting
+            margin-bottom: 4vh
+            // styling
+            border: 1px solid transparentize(colors.$secondary, 0.5)
+            border-radius: 15%
+            user-select: none
+            position: relative
+
+            &:hover
+                border: 1px solid transparentize(colors.$secondary, 0.875)
+        
+        #button-container
+            // sizing
+            height: fit-content
+            max-height: 50vh
+            margin-left: 1vw
+            padding-right: 1vw
+            // layouting
+            display: flex
+            flex-direction: column
+            gap: 5vh
+            overflow-y: scroll
+            // styling
+
+            &::-webkit-scrollbar
+                width: 1vw
+
+            &::-webkit-scrollbar-track
+                background-color: colors.$background-secondary
+                border-radius: 5vw
+                box-shadow: 0.15vw 0.175vh 0 0 #000
+
+            &::-webkit-scrollbar-thumb
+                border: 1px solid colors.$secondary
+                border-radius: 5vw
+                background-color: colors.$primary
+
+
+            .redirect-button
+                // scaling
+                padding: 1vh 6vw
+                // styling
+                background-color: colors.$primary
+                border: 1px colors.$secondary solid
+                border-radius: 3vh
+                box-shadow: 0 0.5vh 0 0 colors.$secondary, 0 -0.25vh 1vh -0.5vh #000
+                color: colors.$primary-text
+                font-family: 'JetBrains Mono', sans-serif
+                font-size: 1.5rem
+                font-weight: 600
+                transition: all 100ms ease
+                user-select: none
+
+                &:active
+                    // transforming
+                    transform: translateY(0.5vh)
+                    // styling
+                    box-shadow: 0 0vh 0 0 colors.$secondary, 0 -0.25vh 1vh -0.5vh #000
+
+            :last-child
+                margin-bottom: 2vh
+
+@media screen and (max-width: 1350px)
+    body
+        align-items: center
+        flex-direction: column
+        justify-content: space-evenly
+        overflow: auto
+        row-gap: 0
+
+        .info-card
+            margin: 10vh 5vw
+
+
