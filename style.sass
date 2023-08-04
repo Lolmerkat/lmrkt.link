@@ -1,0 +1,66 @@
+@use "sass/colors"
+@use "sass/fonts"
+@use "sass:math"
+
+body
+    // layouting
+    display: flex
+    justify-content: center
+    margin: 0
+    overflow: auto
+    //styling
+    background: colors.$background
+
+    main
+        // scaling
+        height: fit-content
+        width: fit-content
+        // layouting
+        align-items: center
+        display: flex
+        flex-direction: column
+        gap: 5vh
+        justify-content: space-between
+        margin-top: 10vh
+
+        $profileImageSideLength: 23vh
+        img
+            // scaling
+            height: $profileImageSideLength
+            width: $profileImageSideLength
+            // layouting
+            margin-bottom: 4vh
+            // styling
+            border: 1px solid transparentize(colors.$secondary, 0.5)
+            border-radius: 15%
+            user-select: none
+            position: relative
+
+            &:hover
+                border: 1px solid transparentize(colors.$secondary, 0.875)
+        
+        .redirect-button
+            // scaling
+            padding: 1vh calc(5vw + 6vh)
+            width: 100%
+            // styling
+            background-color: colors.$primary
+            border: 1px colors.$secondary solid
+            border-radius: 3vh
+            box-shadow: 0 0.5vh 0 0 colors.$secondary, 0 -0.25vh 1vh -0.5vh #000
+            font-family: 'JetBrains Mono', sans-serif
+            font-size: 1.5rem
+            font-weight: 600
+            transition: all 100ms ease
+            user-select: none
+
+            &:active
+                // transforming
+                transform: translateY(0.5vh)
+                // styling
+                box-shadow: 0 0vh 0 0 colors.$secondary, 0 -0.25vh 1vh -0.5vh #000
+                
+                
+
+
+
