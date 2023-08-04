@@ -5,11 +5,50 @@
 body
     // layouting
     display: flex
-    justify-content: center
+    flex-direction: row
+    flex-wrap: now
+    row-gap: 15vw
+    justify-content: space-evenly
     margin: 0
     overflow: auto
     //styling
     background: colors.$background
+
+    .info-card
+        // scaling
+        height: fit-content
+        width: fit-content
+        // layouting   
+        margin-top: 30vh
+        // styling
+        background-color: colors.$background-secondary
+        border: 5px solid black
+        border-radius: 5vh
+        overflow: hidden
+
+        h3
+            // sizing
+            padding: 3vh 0 1vh 0
+            // layouting
+            margin-top: 0
+            top: none
+            // styling
+            background-color: colors.$secondary
+            border-bottom: 3px solid black
+            font-family: 'JetBrains Mono'
+            font-size: 1.75rem
+            font-weight: 800
+            text-align: center
+
+        p
+            // sizing
+            // layouting
+            padding: 0 2.5vw
+            // styling
+            color: colors.$background-text
+            font-family: 'JetBrains Mono'
+            font-size: 1rem
+            text-align: center
 
     main
         // scaling
@@ -18,10 +57,11 @@ body
         // layouting
         align-items: center
         display: flex
-        flex-direction: column
+        flex-direction: column   
         gap: 5vh
         justify-content: space-between
-        margin-top: 10vh
+        margin: 10vh 0
+        
 
         $profileImageSideLength: 23vh
         img
@@ -59,8 +99,19 @@ body
                 transform: translateY(0.5vh)
                 // styling
                 box-shadow: 0 0vh 0 0 colors.$secondary, 0 -0.25vh 1vh -0.5vh #000
-                
-                
 
+@media screen and (max-width: 1350px)
+    body
+        align-items: center
+        flex-direction: column
+        justify-content: space-evenly
+        row-gap: 0
+
+        .info-card
+            margin-top: 10vh
+            margin: 0 5vw
+
+        #copyright
+            margin-bottom: 10vh
 
 

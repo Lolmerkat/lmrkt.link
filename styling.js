@@ -1,4 +1,3 @@
-const profilePicture = document.getElementById("profile_picture");
 var rect = getProfilePictureRect();
 var boxCenterX = calculateBoxCenterX();
 var boxCenterY = calculateBoxCenterY();
@@ -103,11 +102,17 @@ profilePicture.addEventListener("touchend", () => {
 profilePicture.addEventListener("load", () => {
     setBoxShadow(`${defaultShadow.offset.x}`, `${defaultShadow.offset.y}`, 
      `${defaultShadow.blurAmount}`, `${defaultShadow.padding}`, `${defaultShadow.color}`, true);
+
+    const dataAttributes = profilePicture.attributes;
+    const redirectLink = dataAttributes.getNamedItem("redirect-link").value;
+    profilePicture.addEventListener("click", () => {
+        window.open(redirectLink, '_blank')
+    });
 });
 
-window.onresize = () => {
+function updateEffectValues() {
     rect = getProfilePictureRect();
-    boxCenterX = calculateBoxCenterX()
-    boxCenterY = calculateBoxCenterY()
+    boxCenterX = calculateBoxCenterX();
+    boxCenterY = calculateBoxCenterY();
     oneVwUnit = calculateVwUnit();
 }

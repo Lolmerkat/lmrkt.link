@@ -1,4 +1,6 @@
 const redirectButtons = document.querySelectorAll(".redirect-button");
+const profilePicture = document.getElementById("profile-picture");
+
 
 function assignButtonLinks() {
     redirectButtons.forEach(element => {
@@ -13,6 +15,12 @@ function assignButtonLinks() {
     });
 }
 
+function assignProfilePictureRedirect() {
+ 
+}
+
 window.onload = () => {
     assignButtonLinks();
+    assignProfilePictureRedirect();    
+    setInterval(updateEffectValues, 250)
 }
